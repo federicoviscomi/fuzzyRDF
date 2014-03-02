@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:fuzzy="http://gaia.isti.cnr.it/~straccia#"
+         xml:base="http://gaia.isti.cnr.it/~straccia/base#"
+>
+
+  <rdf:Statement rdf:about="#triple1">
+     <rdf:subject rdf:resource="#publicatoDa"/>
+     <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range" ></rdf:predicate>
+     <rdf:object rdf:resource="#casaEditrice" ></rdf:object>
+     <fuzzy:degree rdf:datatype="&xsd;decimal">0.3</fuzzy:degree>
+  </rdf:Statement>
+  
+  <rdf:Statement rdf:about="#triple2">
+     <rdf:subject rdf:resource="#finzioni"/>
+     <rdf:predicate rdf:resource="#publicatoDa" ></rdf:predicate>
+     <rdf:object rdf:resource="#feltrinelli" />
+     <fuzzy:degree rdf:datatype="&xsd;decimal">0.4</fuzzy:degree>
+  </rdf:Statement>
+
+</rdf:RDF>

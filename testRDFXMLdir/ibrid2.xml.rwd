@@ -1,0 +1,32 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://gaia.isti.cnr.it/~straccia#" > 
+  <rdf:Description rdf:about="http://gaia.isti.cnr.it/~straccia/base#triple2">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://gaia.isti.cnr.it/~straccia/base#B"/>
+    <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdf:object rdf:resource="http://gaia.isti.cnr.it/~straccia/base#C"/>
+    <j.0:degree rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</j.0:degree>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gaia.isti.cnr.it/~straccia#ID0">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://gaia.isti.cnr.it/~straccia/base#C"/>
+    <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdf:object rdf:resource="http://gaia.isti.cnr.it/~straccia/base#D"/>
+    <j.0:degree>0.8733</j.0:degree>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gaia.isti.cnr.it/~straccia#ID1">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://gaia.isti.cnr.it/~straccia/base#D"/>
+    <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdf:object rdf:resource="http://gaia.isti.cnr.it/~straccia/base#E"/>
+    <j.0:degree>0.1474</j.0:degree>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gaia.isti.cnr.it/~straccia/base#triple1">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://gaia.isti.cnr.it/~straccia/base#A"/>
+    <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdf:object rdf:resource="http://gaia.isti.cnr.it/~straccia/base#B"/>
+    <j.0:degree rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</j.0:degree>
+  </rdf:Description>
+</rdf:RDF>

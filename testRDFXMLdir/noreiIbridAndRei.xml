@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:fuzzy="http://gaia.isti.cnr.it/~straccia#"
+         xml:base="http://gaia.isti.cnr.it/~straccia/base#"
+>
+
+  <rdf:Statement rdf:about="#triple1">
+     <rdf:subject rdf:resource="#A"/>
+     <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf" />
+     <rdf:object rdf:resource="#B" />
+     <fuzzy:degree rdf:datatype="&xsd;decimal">0.3</fuzzy:degree>
+  </rdf:Statement>
+  
+  <rdf:Statement rdf:about="#triple2">
+     <rdf:subject rdf:resource="#B"/>
+     <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf" />
+     <rdf:object rdf:resource="#C" />
+     <fuzzy:degree rdf:datatype="&xsd;decimal">0.4</fuzzy:degree>
+  </rdf:Statement>
+  
+    <rdf:Description rdf:about="#D">
+    	<rdfs:subClassOf rdf:resource="#E"/>
+    </rdf:Description>
+    
+   <rdf:Description rdf:about="#C">
+     <rdfs:subClassOf rdf:resource="#D" />
+   </rdf:Description>
+    
+</rdf:RDF>

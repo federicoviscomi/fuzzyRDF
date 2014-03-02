@@ -1,0 +1,138 @@
+@prefix fuzzy: <http://gaia.isti.cnr.it/~straccia#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix base: <http://gaia.isti.cnr.it/~straccia/base#>.
+
+[subclass1Reification:
+	(?StmID1, rdf:subject, ?A)
+	(?StmID1, rdf:predicate, rdfs:subClassOf)
+	(?StmID1, rdf:object, ?B)
+	(?StmID1, rdf:type, rdf:Statement)
+	(?StmID1, fuzzy:degree, ?Degree1)
+	(?StmID2, rdf:subject, ?B)
+	(?StmID2, rdf:predicate, rdfs:subClassOf)
+	(?StmID2, rdf:object, ?C)
+	(?StmID2, rdf:type, rdf:Statement)
+	(?StmID2, fuzzy:degree, ?Degree2)
+	tnorm(?Degree1, ?Degree2, ?Degree3)
+	hasANotWeakerStatement(?A, rdfs:subClassOf, ?C, ?Degree3)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?A)
+	(?S, rdf:predicate, rdfs:subClassOf)
+	(?S, rdf:object, ?C)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree3)	
+]
+
+[subclass1Ibrid:
+	(?StmID1, rdf:subject, ?A)
+	(?StmID1, rdf:predicate, rdfs:subClassOf)
+	(?StmID1, rdf:object, ?B)
+	(?StmID1, rdf:type, rdf:Statement)
+	(?StmID1, fuzzy:degree, ?Degree1)
+	(?B, rdfs:subClassOf, ?C)
+	hasANotWeakerStatement(?A, rdfs:subClassOf, ?C, ?Degree1)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?A)
+	(?S, rdf:predicate, rdfs:subClassOf)
+	(?S, rdf:object, ?C)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree1)	
+]
+
+[subclass1Ibrid2:
+	(?A, rdfs:subClassOf, ?B)
+	(?StmID2, rdf:subject, ?B)
+	(?StmID2, rdf:predicate, rdfs:subClassOf)
+	(?StmID2, rdf:object, ?C)
+	(?StmID2, rdf:type, rdf:Statement)
+	(?StmID2, fuzzy:degree, ?Degree2)
+	hasANotWeakerStatement(?A, rdfs:subClassOf, ?C, ?Degree2)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?A)
+	(?S, rdf:predicate, rdfs:subClassOf)
+	(?S, rdf:object, ?C)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree2)	
+]
+
+
+[subclass1NoReification:
+	(?A, rdfs:subClassOf, ?B)
+	(?B, rdfs:subClassOf, ?C)
+	hasANotWeakerStatement(?A, rdfs:subClassOf, ?C, 1)
+	makeTemp(?S)
+	->
+	(?A, rdfs:subClassOf, ?C)
+]
+
+
+[subclass2Reification:
+	(?StmID1, rdf:subject, ?A)
+	(?StmID1, rdf:predicate, rdfs:subClassOf)
+	(?StmID1, rdf:object, ?B)
+	(?StmID1, rdf:type, rdf:Statement)
+	(?StmID1, fuzzy:degree, ?Degree1)
+	(?StmID2, rdf:subject, ?X)
+	(?StmID2, rdf:predicate, rdf:type)
+	(?StmID2, rdf:object, ?A)
+	(?StmID2, rdf:type, rdf:Statement)
+	(?StmID2, fuzzy:degree, ?Degree2)
+	tnorm(?Degree1, ?Degree2, ?Degree3)
+	hasANotWeakerStatement(?X, rdf:type, ?B, ?Degree3)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?X)
+	(?S, rdf:predicate, rdf:type)
+	(?S, rdf:object, ?B)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree3)	
+]
+
+[subclass2Ibrid1:
+	(?StmID1, rdf:subject, ?A)
+	(?StmID1, rdf:predicate, rdfs:subClassOf)
+	(?StmID1, rdf:object, ?B)
+	(?StmID1, rdf:type, rdf:Statement)
+	(?StmID1, fuzzy:degree, ?Degree1)
+	(?X, rdf:type, ?A)
+	hasANotWeakerStatement(?X, rdf:type, ?B, ?Degree1)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?X)
+	(?S, rdf:predicate, rdf:type)
+	(?S, rdf:object, ?B)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree1)	
+]
+
+[subclass2Ibrid2:
+	(?A, rdfs:subClassOf, ?B)
+	(?StmID2, rdf:subject, ?X)
+	(?StmID2, rdf:predicate, rdf:type)
+	(?StmID2, rdf:object, ?A)
+	(?StmID2, rdf:type, rdf:Statement)
+	(?StmID2, fuzzy:degree, ?Degree2)
+	hasANotWeakerStatement(?X, rdf:type, ?B, ?Degree2)
+	makeTemp(?S)
+	->
+	(?S, rdf:subject, ?X)
+	(?S, rdf:predicate, rdf:type)
+	(?S, rdf:object, ?B)
+	(?S, rdf:type, rdf:Statement)
+	(?S, fuzzy:degree, ?Degree2)	
+]
+
+
+[subclass2NoReification:
+	(?A, rdfs:subClassOf, ?B)
+	(?X, rdf:type, ?A)
+	hasANotWeakerStatement(?X, rdf:type, ?B, 1)
+	makeTemp(?S)
+	->
+	(?X, rdf:type, ?B)	
+]
+
